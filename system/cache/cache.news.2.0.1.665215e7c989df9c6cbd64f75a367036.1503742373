@@ -1,0 +1,1030 @@
+a:5:{i:202;a:16:{s:7:"news_id";s:3:"202";s:5:"image";s:80:"data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/temph.jpg";s:14:"date_available";s:10:"2017-08-16";s:8:"subtract";s:1:"1";s:10:"sort_order";s:1:"1";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2017-08-17 18:44:32";s:13:"date_modified";s:19:"2017-08-23 15:16:01";s:6:"viewed";s:3:"127";s:11:"language_id";s:1:"2";s:4:"name";s:144:"Đo nhiệt độ - độ ẩm, hiện thị trên LCD và lưu dữ liệu vào thẻ nhớ SD sử dụng module DHT-11, Micro SD, RTC BQ32000";s:11:"description";s:58291:"&lt;p style=&quot;margin-left: 120px;&quot;&gt;
+	&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/temph.jpg&quot; style=&quot;width: 700px; height: 394px;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;1.&amp;nbsp;&amp;nbsp; Giới thiệu&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Xin chào các bạn! Hôm nay mình sẽ hướng dẫn các bạn cách đọc nhiệt độ - độ ẩm sau đó xuất ra màn hình LCD nhiệt độ - độ ẩm cùng với thời gian thực và lưu dữ liệu thu được vào thẻ SD. Hy vọng thông qua bài viết này sẽ giúp các bạn trên con đường thực hiện những dự án của riêng mình!&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;2.&amp;nbsp;&amp;nbsp; Nội dung chính&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.75in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Đọc nhiệt độ - độ ẩm từ module cảm biến DHT-11&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;+&amp;nbsp;&amp;nbsp; Hiện thị ngày giờ và nhiệt độ độ ẩm lên LCD.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;+&amp;nbsp;&amp;nbsp; Cứ sau 10s lưu dữu liệu vào thẻ nhớ SD.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.75in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Ứng dụng: Sử dụng để&amp;nbsp; theo dõi nhệt độ - độ ẩm cho: kho lạnh, xe đông lạnh, tủ vacxin, phòng máy chủ/server, … Sử dụng dữ liệu đã lưu để vẽ biểu đồ nhiệt độ - độ ẩm phục vụ cho công tác nghiên cứu.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;3.&amp;nbsp;&amp;nbsp;&amp;nbsp; Chuẩn bị phần cứng&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.75in;&quot;&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;a)&amp;nbsp;&amp;nbsp; KIT Arduino UNO VN01&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.75in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/uvn01_01-500x500.jpg&quot; style=&quot;width: 500px; height: 500px;&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Đặc điểm kỹ thuật:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Sử dụng vi điều khiển Atmega328P-AU&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Nguồn cấp đầu vào dải rộng&amp;nbsp; 7-36VDC&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Tạo ra nguồn ouput 5V/2A và 3.3V/800mA&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Lựa chọn được nguồn cấp cho Atmega328P là 5V/3.3V&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Tương thích với Arduino Uno và Arduino IDE&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;14 chân I/O số (6 chân output PWM)&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;6 chân Analog&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Flash Memory: 32K&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;RAM: 2K&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;EEPROM: 1K&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 63pt;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Clock: 16Mhz&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-left:.5in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Link tham khảo: &lt;a href=&quot;http://mlab.vn/mach-arduino/1697809-uno-vn01-arduino-uno-phien-ban-viet-nam.html&quot;&gt;http://mlab.vn/mach-arduino/1697809-uno-vn01-arduino-uno-phien-ban-viet-nam.html&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.5in;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.75in;&quot;&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;b)&amp;nbsp;&amp;nbsp; LCD 1206 Keypad shield MLAB&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.5in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/LK_01-500x500.jpg&quot; style=&quot;width: 500px; height: 500px;&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Đặc điểm kỹ thuật:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Điện áp hoạt động : 5VDC&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;5 nút nhấn cho người sử dụng tùy chọn làm các nút menu điều khiển&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Nút RST dùng để reset chương trình cho Arduino&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Có biến trở để điều chỉnh độ tương phản của LCD&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Mở rộng thêm các I/O mà arduino không dùng để điều khiển LCD&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Mở rộng các thêm các chân ADC để có thể kết nối dễ dàng với các cảm biến&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Kích thước:82x62mm&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Link tham khảo: &lt;a href=&quot;http://mlab.vn/mach-arduino/980100-lcd-1206-keypad-shield-mlab.html&quot;&gt;http://mlab.vn/mach-arduino/980100-lcd-1206-keypad-shield-mlab.html&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;c)&amp;nbsp;&amp;nbsp;&amp;nbsp; Module cảm biến DHT-11&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/dht11.JPG&quot; style=&quot;width: 350px; height: 287px;&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Đặc điểm kỹ thuật:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:1in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&amp;nbsp;+ Nhiệt độ:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Độ phân giải:&amp;nbsp; 1°C&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Độ chính xác: ±2℃&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Dải đo: 0°C ~ 50°C&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-left:1in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;+ Độ ẩm:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Độ phân giải:&amp;nbsp; 1%RH&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Độ chính xác: ±5%RH (0~50°C)&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Dải đo: 20%RH ~ 90%RH (25°C)&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-left:1.0in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&amp;nbsp;+ Điện áp hoạt động: 5VDC&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:1.0in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&amp;nbsp;+ &amp;nbsp;Điều kiện hoạt động đề nghị:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Nhiệt độ: 10°C ~40°C&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1.5in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Độ ẩm: 60%RH hoặc thấp hơn&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-left:21.3pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Link tham khảo: &lt;a href=&quot;http://mlab.vn/module-boards/module-cam-bien/1737124-module-cam-bien-nhiet-do-do-am-dht11.html&quot;&gt;http://mlab.vn/module-boards/module-cam-bien/1737124-module-cam-bien-nhiet-do-do-am-dht11.html&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left:35.45pt;&quot;&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;d) &amp;nbsp;&amp;nbsp;&amp;nbsp;Module thời gian thực BQ32000&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.75in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/SAM_4530.JPG&quot; style=&quot;width: 500px; height: 408px;&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;margin-left:.75in;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-family: arial, helvetica, sans-serif; font-size: 14px;&quot;&gt;Đặc điểm kỹ thuật:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li style=&quot;margin-left: 80px;&quot;&gt;
+		&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;font-family: arial, helvetica, sans-serif;&quot;&gt;Điện áp hoạt động : 3V&amp;nbsp; - 3.6V.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 80px;&quot;&gt;
+		&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;font-family: arial, helvetica, sans-serif;&quot;&gt;Sử dụng IC thời gian thực BQ32000 (TexasInstruments)&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 80px;&quot;&gt;
+		&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;font-family: arial, helvetica, sans-serif;&quot;&gt;Giao tiếp I2C hỗ trợ tới 400 Khz.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 80px;&quot;&gt;
+		&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;font-family: arial, helvetica, sans-serif;&quot;&gt;Tự động chuyển sang nguồn Pin (3V) &amp;nbsp;khi mất điện.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Link tham khảo: &lt;a href=&quot;http://mlab.vn/28900-module-rtc-bq32000.html&quot;&gt;http://mlab.vn/28900-module-rtc-bq32000.html&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:35.45pt;&quot;&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;e) &amp;nbsp; &amp;nbsp;Module Micro SD&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:35.45pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/module the nho.jpg&quot; style=&quot;width: 350px; height: 350px;&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;·&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Đặc điểm kỹ thuật:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Điện áp hoạt động: 5V.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Giao tiếp: SPI&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;MOSI, MISO, CLK, CS kết nối tương ứng với các chân MOSI, MISO, CLK, CS của MCU để giao tiếp với thẻ nhớ.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li style=&quot;margin-left: 1in;&quot;&gt;
+		&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;EN: Chân điều khiển bật/tắt nguồn cho Module, &amp;nbsp;EN ở mức cao/mức thấp tương ứng với nguồn cấp cho Module là bật/ tắt. Nếu không dùng chức năng bật/tắt nguồn cho Module thì chân EN phải được nối với VIN qua jumper.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Link tham khảo: &lt;a href=&quot;http://mlab.vn/184900-module-micro-sd.html&quot;&gt;http://mlab.vn/184900-module-micro-sd.html&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;4.&amp;nbsp;&amp;nbsp;&amp;nbsp; Kết nối phần cứng&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Bai viet ki thuat 2/cam nhietdo doam ghi thenho/Temp_hum_bb.jpg&quot; style=&quot;width: 800px; height: 774px;&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;* LCD Keypad Sheild Mlab đã được tích hợp sẵn jump phù hợp với Arduino nên chỉ cần cắm lên Kit Arduino là sử dụng được và các chân còn thừa sẽ được đưa ra.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;* Module cảm biến DHT11&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;DHT11&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Arduino&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Vcc&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;5V&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;GND&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;GND&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Dout&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Pin 2&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;* Module Micro SD&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:307px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Micro SD&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:308px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Arduino&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:307px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Vcc&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:308px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;5V&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:307px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;GND&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:308px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;GND&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:307px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;DI&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:308px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Pin 11&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:307px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;SCK&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:308px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Pin 13&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:307px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;DO&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:308px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Pin 12&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:307px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;CS&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:308px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Pin 3&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left:.25in;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;* Module RTC BQ32000&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;RTC BQ32000&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Arduino&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Vcc&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;5V&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;GND&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;GND&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;SCL&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Pin&amp;nbsp; A5&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;SDA&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+			&lt;td style=&quot;width:319px;&quot;&gt;
+				&lt;p align=&quot;center&quot;&gt;
+					&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Pin&amp;nbsp; A4&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p align=&quot;center&quot; style=&quot;margin-left:.25in;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;5.&amp;nbsp;&amp;nbsp;&amp;nbsp; Lập trình&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Đầu tiên ta cần cài thời gian cho Module RTC 32000.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Lưu ý trước khi thực hiện việc set up thời gian này các bạn cần phải cài đặt thời gian trong máy tính của bạn chuẩn, bởi vì Module sẽ lấy thời gian ở đấy để set up. Đây là một số link serve thời gian thực để các bạn tiện theo dõi:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;a href=&quot;https://time.is/H%C3%A0_N%E1%BB%99i,_H%C3%A0_Nam&quot;&gt;https://time.is/H%C3%A0_N%E1%BB%99i,_H%C3%A0_Nam&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;a href=&quot;https://www.timeanddate.com/time/zone/vietnam/hanoi&quot;&gt;https://www.timeanddate.com/time/zone/vietnam/hanoi&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-family: arial, helvetica, sans-serif; font-size: 14px;&quot;&gt;Sau đó ta nạp chương trình sau đây:&lt;/span&gt;&lt;/p&gt;
+&lt;!-- HTML generated using hilite.me --&gt;
+&lt;div style=&quot;background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;
+	&lt;table&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;
+					&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53&lt;/pre&gt;
+				&lt;/td&gt;
+				&lt;td&gt;
+					&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &amp;lt;Wire.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &quot;RTClib.h&quot;&lt;/span&gt;
+
+RTC_DS1307 rtc;
+
+&lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_error &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;4&lt;/span&gt;;
+
+&lt;span style=&quot;color: #902000&quot;&gt;char&lt;/span&gt; daysOfTheWeek[&lt;span style=&quot;color: #40a070&quot;&gt;7&lt;/span&gt;][&lt;span style=&quot;color: #40a070&quot;&gt;12&lt;/span&gt;] &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; {&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Sunday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Monday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Tuesday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Wednesday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Thursday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Friday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Saturday&quot;&lt;/span&gt;};
+
+&lt;span style=&quot;color: #902000&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #06287e&quot;&gt;setup&lt;/span&gt; () {
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;while&lt;/span&gt; (&lt;span style=&quot;color: #666666&quot;&gt;!&lt;/span&gt;Serial); &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// for Leonardo/Micro/Zero&lt;/span&gt;
+
+  Serial.begin(&lt;span style=&quot;color: #40a070&quot;&gt;57600&lt;/span&gt;);
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt; (&lt;span style=&quot;color: #666666&quot;&gt;!&lt;/span&gt; rtc.begin()) {
+    Serial.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Couldn't find RTC&quot;&lt;/span&gt;);
+    &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;while&lt;/span&gt; (&lt;span style=&quot;color: #40a070&quot;&gt;1&lt;/span&gt;);
+  }
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__))); 
+  
+  DateTime now &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; rtc.now();
+    
+  Serial.print(now.year(), DEC);
+  Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;'/'&lt;/span&gt;);
+  Serial.print(now.month(), DEC);
+  Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;'/'&lt;/span&gt;);
+  Serial.print(now.day(), DEC);
+  Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot; (&quot;&lt;/span&gt;);
+  Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
+  Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;) &quot;&lt;/span&gt;);
+  Serial.print(now.hour(), DEC);
+  Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;':'&lt;/span&gt;);
+    
+  &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_minute &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; now.minute();
+  &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_second &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; now.second(); 
+  &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_ok &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;;
+    
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt;(time_second &lt;span style=&quot;color: #666666&quot;&gt;&amp;gt;=&lt;/span&gt; (&lt;span style=&quot;color: #40a070&quot;&gt;60&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;-&lt;/span&gt; time_error)){
+    time_ok &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; time_error &lt;span style=&quot;color: #666666&quot;&gt;+&lt;/span&gt; time_second &lt;span style=&quot;color: #666666&quot;&gt;-&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;60&lt;/span&gt;;
+    Serial.print(time_minute &lt;span style=&quot;color: #666666&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;1&lt;/span&gt;);
+    Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    Serial.print(time_ok);
+  }
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;else&lt;/span&gt; {
+    Serial.print(now.minute());
+    Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    Serial.print(time_second &lt;span style=&quot;color: #666666&quot;&gt;+&lt;/span&gt; time_error);
+  }
+  Serial.println();
+  delay(&lt;span style=&quot;color: #40a070&quot;&gt;1000&lt;/span&gt;);
+}
+
+&lt;span style=&quot;color: #902000&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #06287e&quot;&gt;loop&lt;/span&gt; () {
+}
+&lt;/pre&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Sau khi nạp xong chương trình trên vào Arduino, ta nạp tiếp chương trình:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;!-- HTML generated using hilite.me --&gt;&lt;/p&gt;
+&lt;div style=&quot;background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;
+	&lt;table&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;
+					&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150&lt;/pre&gt;
+				&lt;/td&gt;
+				&lt;td&gt;
+					&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &amp;lt;DHT.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &amp;lt;LiquidCrystal.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &amp;lt;SPI.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &amp;lt;SD.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &amp;lt;Wire.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #007020&quot;&gt;#include &amp;lt;RTClib.h&amp;gt;&lt;/span&gt;
+LiquidCrystal &lt;span style=&quot;color: #06287e&quot;&gt;lcd&lt;/span&gt;(&lt;span style=&quot;color: #40a070&quot;&gt;8&lt;/span&gt;, &lt;span style=&quot;color: #40a070&quot;&gt;9&lt;/span&gt;, &lt;span style=&quot;color: #40a070&quot;&gt;4&lt;/span&gt;, &lt;span style=&quot;color: #40a070&quot;&gt;5&lt;/span&gt;, &lt;span style=&quot;color: #40a070&quot;&gt;6&lt;/span&gt;, &lt;span style=&quot;color: #40a070&quot;&gt;7&lt;/span&gt;);   
+
+RTC_DS1307 rtc;
+
+&lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_error &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;6&lt;/span&gt;;                &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// Tùy chỉnh sai số cho Module RTC BQ32000&lt;/span&gt;
+
+&lt;span style=&quot;color: #902000&quot;&gt;char&lt;/span&gt; daysOfTheWeek[&lt;span style=&quot;color: #40a070&quot;&gt;7&lt;/span&gt;][&lt;span style=&quot;color: #40a070&quot;&gt;12&lt;/span&gt;] &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; {&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Sunday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Monday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Tuesday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Wednesday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Thursday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Friday&quot;&lt;/span&gt;, &lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Saturday&quot;&lt;/span&gt;};
+
+
+&lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;const&lt;/span&gt; &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; DHTPIN &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;2&lt;/span&gt;;             &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;//Đọc dữ liệu từ DHT11 ở chân 2 trên mạch Arduino&lt;/span&gt;
+&lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;const&lt;/span&gt; &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; DHTTYPE &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; DHT11;        &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;//Khai báo loại cảm biến&lt;/span&gt;
+
+DHT &lt;span style=&quot;color: #06287e&quot;&gt;dht&lt;/span&gt;(DHTPIN, DHTTYPE);
+
+byte degree[&lt;span style=&quot;color: #40a070&quot;&gt;8&lt;/span&gt;] &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; {
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B01110,
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B01010,
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B01110,
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B00000,
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B00000,
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B00000,
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B00000,
+  &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;B00000
+};
+
+File myFile;
+
+&lt;span style=&quot;color: #902000&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #06287e&quot;&gt;setup&lt;/span&gt;() {
+  Serial.begin(&lt;span style=&quot;color: #40a070&quot;&gt;9600&lt;/span&gt;);
+  
+  lcd.begin(&lt;span style=&quot;color: #40a070&quot;&gt;16&lt;/span&gt;, &lt;span style=&quot;color: #40a070&quot;&gt;2&lt;/span&gt;);               &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// Khởi động LCD&lt;/span&gt;
+  lcd.setCursor(&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;,&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;);             &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// Đặt vị trí cho con trỏ LCD &lt;/span&gt;
+  lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;mlab.vn&quot;&lt;/span&gt;);  
+
+  lcd.createChar(&lt;span style=&quot;color: #40a070&quot;&gt;1&lt;/span&gt;, degree);
+
+   &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt; (&lt;span style=&quot;color: #666666&quot;&gt;!&lt;/span&gt; rtc.begin()) {
+    Serial.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Couldn't find RTC&quot;&lt;/span&gt;);
+    &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;while&lt;/span&gt; (&lt;span style=&quot;color: #40a070&quot;&gt;1&lt;/span&gt;);
+  }
+  
+  dht.begin();                    &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// Khởi động cảm biến DHT11&lt;/span&gt;
+
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;while&lt;/span&gt; (&lt;span style=&quot;color: #666666&quot;&gt;!&lt;/span&gt;Serial) {
+    ; &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// wait for serial port to connect.&lt;/span&gt;
+  }
+
+
+  Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Initializing SD card...&quot;&lt;/span&gt;);
+
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt; (&lt;span style=&quot;color: #666666&quot;&gt;!&lt;/span&gt;SD.begin(&lt;span style=&quot;color: #40a070&quot;&gt;3&lt;/span&gt;)) {
+    Serial.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;initialization failed!&quot;&lt;/span&gt;);
+    &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;return&lt;/span&gt;;
+  }
+  Serial.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;initialization done.&quot;&lt;/span&gt;);
+ 
+}
+
+&lt;span style=&quot;color: #902000&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #06287e&quot;&gt;loop&lt;/span&gt;() {
+  DateTime now &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; rtc.now();
+  &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_minute &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; now.minute();
+  &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_second &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; now.second(); 
+  &lt;span style=&quot;color: #902000&quot;&gt;int&lt;/span&gt; time_ok &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;;
+    
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt;(time_second &lt;span style=&quot;color: #666666&quot;&gt;&amp;gt;=&lt;/span&gt; (&lt;span style=&quot;color: #40a070&quot;&gt;60&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;-&lt;/span&gt; time_error)){
+    time_ok &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; time_error &lt;span style=&quot;color: #666666&quot;&gt;+&lt;/span&gt; time_second &lt;span style=&quot;color: #666666&quot;&gt;-&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;60&lt;/span&gt;;
+    time_minute &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; time_minute &lt;span style=&quot;color: #666666&quot;&gt;+&lt;/span&gt; &lt;span style=&quot;color: #40a070&quot;&gt;1&lt;/span&gt;;
+    time_second &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; time_ok;
+    }
+    &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;else&lt;/span&gt; {
+      time_second&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;  time_second &lt;span style=&quot;color: #666666&quot;&gt;+&lt;/span&gt; time_error;
+    }
+  &lt;span style=&quot;color: #902000&quot;&gt;float&lt;/span&gt; h &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; dht.readHumidity();               &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;//Đọc độ ẩm &lt;/span&gt;
+  &lt;span style=&quot;color: #902000&quot;&gt;float&lt;/span&gt; t &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; dht.readTemperature();            &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;//Đọc nhiệt độ&lt;/span&gt;
+  &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// kiểm tra lại giá trị nhiệt độ và độ ẩm đọc được, nếu chúng là &quot;NaN&quot; ( not a number) thì có vấn đề&lt;/span&gt;
+  &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt; (isnan(t) &lt;span style=&quot;color: #666666&quot;&gt;||&lt;/span&gt; isnan(h)) {
+    Serial.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Failed to read from DHT&quot;&lt;/span&gt;);
+  } &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;else&lt;/span&gt; {
+    Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Humidity: &quot;&lt;/span&gt;); 
+    Serial.print(h);
+    Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot; % &quot;&lt;/span&gt;);
+    Serial.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Temperature: &quot;&lt;/span&gt;); 
+    Serial.print(t);
+    Serial.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot; *C&quot;&lt;/span&gt;);
+  }
+   &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;//Mở File &lt;/span&gt;
+   myFile &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; SD.open(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;TempHum.txt&quot;&lt;/span&gt;, FILE_WRITE);
+
+    &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// Viết dữ liệu vào File&lt;/span&gt;
+    &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt; (myFile) {
+      &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;if&lt;/span&gt;( time_second&lt;span style=&quot;color: #666666&quot;&gt;%&lt;/span&gt;&lt;span style=&quot;color: #40a070&quot;&gt;10&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;==&lt;/span&gt;&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; time_second&lt;span style=&quot;color: #666666&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;color: #40a070&quot;&gt;10&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;!=&lt;/span&gt;&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;||&lt;/span&gt; time_second&lt;span style=&quot;color: #666666&quot;&gt;==&lt;/span&gt;&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;)  {
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Ngay: &quot;&lt;/span&gt;);
+    myFile.print(now.day());
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;/&quot;&lt;/span&gt;);
+    myFile.print(now.month());
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;/&quot;&lt;/span&gt;);
+    myFile.print(now.year());
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;  &quot;&lt;/span&gt;);
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Thoi diem: &quot;&lt;/span&gt;);
+    myFile.print(now.hour());
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    myFile.print(time_minute);
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    myFile.print(time_second);
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;  &quot;&lt;/span&gt;);
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Nhiet do: &quot;&lt;/span&gt;);
+    myFile.print(t);
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;*C &quot;&lt;/span&gt;);
+    myFile.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;Do am: &quot;&lt;/span&gt;);
+    myFile.print(h);
+    myFile.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;%&quot;&lt;/span&gt;);
+    myFile.close();
+    }
+      &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;//đóng file :&lt;/span&gt;
+      myFile.close();
+      } &lt;span style=&quot;color: #007020; font-weight: bold&quot;&gt;else&lt;/span&gt; {
+      &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// Nếu lỗi mở File, in thông báo ra Serial&lt;/span&gt;
+      Serial.println(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;error opening data file&quot;&lt;/span&gt;);
+        }
+    &lt;span style=&quot;color: #60a0b0; font-style: italic&quot;&gt;// Hiển thị thông in lên LCD&lt;/span&gt;
+    lcd.setCursor(&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;,&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;);
+    lcd.print(now.day());
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;/&quot;&lt;/span&gt;);
+    lcd.print(now.month());
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;/&quot;&lt;/span&gt;);
+    lcd.print(now.year());
+    
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot; H&quot;&lt;/span&gt;);
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    lcd.print(round(h));
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;%   &quot;&lt;/span&gt;);
+    
+    lcd.setCursor(&lt;span style=&quot;color: #40a070&quot;&gt;0&lt;/span&gt;,&lt;span style=&quot;color: #40a070&quot;&gt;1&lt;/span&gt;);
+    lcd.print(now.hour());
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    lcd.print(time_minute);
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    lcd.print(time_second);
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;  T&quot;&lt;/span&gt;);
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;:&quot;&lt;/span&gt;);
+    lcd.print(round(t));
+    lcd.write(&lt;span style=&quot;color: #40a070&quot;&gt;1&lt;/span&gt;);
+    lcd.print(&lt;span style=&quot;color: #4070a0&quot;&gt;&quot;C   &quot;&lt;/span&gt;);
+  }
+&lt;/pre&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-family: arial, helvetica, sans-serif; font-size: 14px;&quot;&gt;Link tải thư viện:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;RTClib : &lt;a href=&quot;https://github.com/adafruit/RTClib&quot;&gt;https://github.com/adafruit/RTClib&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Dht: &lt;a href=&quot;https://github.com/adafruit/DHT-sensor-library&quot;&gt;https://github.com/adafruit/DHT-sensor-library&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;Tham khảo:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;a href=&quot;https://www.arduino.cc/en/Reference/LiquidCrystal&quot;&gt;https://www.arduino.cc/en/Reference/LiquidCrystal&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;a href=&quot;https://www.arduino.cc/en/Reference/SPI&quot;&gt;https://www.arduino.cc/en/Reference/SPI&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;a href=&quot;https://www.arduino.cc/en/Reference/SDCardNotes&quot;&gt;https://www.arduino.cc/en/Reference/SDCardNotes&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;a href=&quot;https://www.arduino.cc/en/Reference/Wire&quot;&gt;https://www.arduino.cc/en/Reference/Wire&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;strong&gt;6. Kết quả&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+	Và đây là kết quả:&lt;/div&gt;
+&lt;div style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;iframe allowfullscreen=&quot;&quot; frameborder=&quot;0&quot; height=&quot;315&quot; scrolling=&quot;no&quot; src=&quot;https://www.youtube.com/embed/e17I32xEnLY&quot; width=&quot;560&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	&lt;img alt=&quot;&quot; src=&quot;https://youtu.be/e17I32xEnLY&quot; /&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-left: 960px;&quot;&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:12px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Tác giả bài viết : &lt;span style=&quot;color:#ff0000;&quot;&gt;thích ăn mỳ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-left: 960px;&quot;&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:12px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Chỉnh sửa và up bởi : &lt;span style=&quot;color:#ff0000;&quot;&gt;Seven&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
+&lt;p style=&quot;margin-left: 35.7pt; text-align: center;&quot;&gt;
+	&lt;span style=&quot;font-family:arial,helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;Nếu có bất kì khó khăn gì các bạn hãy để lại ở phần bình luận phía dưới, chúng tôi sẽ giải đáp những thắc mắc cho các bạn. Chúc các bạn thành công!&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+";s:16:"meta_description";s:144:"Đo nhiệt độ - độ ẩm, hiện thị trên LCD và lưu dữ liệu vào thẻ nhớ SD sử dụng module DHT-11, Micro SD, RTC BQ32000";s:12:"meta_keyword";s:144:"Đo nhiệt độ - độ ẩm, hiện thị trên LCD và lưu dữ liệu vào thẻ nhớ SD sử dụng module DHT-11, Micro SD, RTC BQ32000";s:8:"store_id";s:1:"0";s:8:"comments";N;}i:201;a:16:{s:7:"news_id";s:3:"201";s:5:"image";s:64:"data/Bai viet ky thuat/Setup Audio/Cheapo and Sparky/setup16.jpg";s:14:"date_available";s:10:"2017-08-15";s:8:"subtract";s:1:"1";s:10:"sort_order";s:1:"1";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2017-08-16 16:01:01";s:13:"date_modified";s:19:"2017-08-16 16:04:43";s:6:"viewed";s:2:"30";s:11:"language_id";s:1:"2";s:4:"name";s:35:"Cài đặt cho Cheapo với Sparky";s:11:"description";s:5740:"&lt;p&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Hướng dẫn cài đặt cho Cheapo trên Sparky với Volumio&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px; text-align: center;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;457&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Cheapo and Sparky/setup16.jpg&quot; width=&quot;779&quot; /&gt; &amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px; text-align: center;&quot;&gt;
+	&amp;nbsp; &lt;img alt=&quot;&quot; height=&quot;446&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Cheapo and Sparky/setup17.jpg&quot; width=&quot;778&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px; text-align: center;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;407&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Cheapo and Sparky/setup18.jpg&quot; width=&quot;780&quot; /&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px; text-align: center;&quot;&gt;
+	&amp;nbsp;&amp;nbsp; &lt;img alt=&quot;&quot; height=&quot;405&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Cheapo and Sparky/setup19.jpg&quot; width=&quot;775&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Phần cứng cần chuẩn bị : &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ &lt;a href=&quot;http://mlab.vn/choi-am-thanh/1951609-sparky.html&quot;&gt;Sparky SBC&lt;/a&gt; &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ &lt;a href=&quot;http://mlab.vn/choi-am-thanh/1946025-cheapo.html&quot;&gt;Cheapo DAC&lt;/a&gt; &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ &lt;a href=&quot;http://mlab.vn/choi-am-thanh/1937664-bo-nguon-5v-3a.html&quot;&gt;Nguồn 5V/3A Allo&lt;/a&gt; &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ &lt;a href=&quot;http://mlab.vn/raspberry-pi-b-raspberry-pi2/phu-kien-cho-raspberry-pi/1050625-the-nho-micro-sd-16g-class-10-sandisk-ultra-48mb-s-full-hd-video.html&quot;&gt;Thẻ nhớ 16Gb, Class 10&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Tại link download của &lt;a href=&quot;https://volumio.org/get-started/&quot;&gt;Volumio&lt;/a&gt;, các bạn chọn board Sparky và download Volumio dành cho Sparky.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Tiến hành ghi hệ điều hành vào thẻ nhớ, tương tự như cài đặt hệ điều hành với Raspberry Pi.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn cắm thẻ nhớ, nguồn, kết nối dây mạng cho Sparky, Volumio sẽ khởi động. &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Cheapo and Sparky/Cheapo.jpg&quot; style=&quot;width: 1004px; height: 524px;&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Chọn &lt;strong&gt;PLAYBACK OPTIONS&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;gt; Chọn &lt;strong&gt;Audio Output&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;Output Device&lt;/strong&gt; : Chọn &lt;strong&gt;Audio Out&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;I2S DAC&lt;/strong&gt; : chọn &lt;strong&gt;OFF&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau đó chọn &lt;strong&gt;Save&lt;/strong&gt; và khởi động lại Volumio.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;em&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;________ Mlab chúc các bạn nghe nhạc vui vẻ !__________&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+";s:16:"meta_description";s:35:"Cài đặt cho Cheapo với Sparky";s:12:"meta_keyword";s:35:"Cài đặt cho Cheapo với Sparky";s:8:"store_id";s:1:"0";s:8:"comments";N;}i:200;a:16:{s:7:"news_id";s:3:"200";s:5:"image";s:55:"data/Bai viet ky thuat/Setup Audio/Piano DAC/setup5.jpg";s:14:"date_available";s:10:"2017-08-15";s:8:"subtract";s:1:"1";s:10:"sort_order";s:1:"1";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2017-08-16 15:36:45";s:13:"date_modified";s:19:"0000-00-00 00:00:00";s:6:"viewed";s:2:"28";s:11:"language_id";s:1:"2";s:4:"name";s:26:"Cài đặt cho Piano DAC ";s:11:"description";s:7257:"&lt;p&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Hướng dẫn cài đặt cho Piano DAC 1.1 của Allo&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; height=&quot;535&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano DAC/setup7.jpg&quot; width=&quot;917&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:12px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Hình 1 : Ghép nối Raspberry Pi 3 + Kali + Piano DAC 1.1&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;552&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano DAC/setup12.jpg&quot; width=&quot;923&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:12px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Hình 2 : Ghép nối Raspberry Pi 3 + Piano DAC 1.1&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;1.) Cài đặt Piano DAC 1.1 trên Volumio &lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau khi đã cài đặt volumio vào thẻ nhớ.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Copy dòng cài đặt sau vào cuối file : &lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;/boot/config.txt&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;dtoverlay=allo-piano-dac-pcm512x-audio&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn khởi động Volumio.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;663&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano DAC/Piano1.1_2.jpg&quot; width=&quot;1270&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Chọn &lt;strong&gt;PLAYBACK OPTIONS&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;gt; Chọn &lt;strong&gt;Audio Output&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;Output Device&lt;/strong&gt; : Chọn &lt;strong&gt;&lt;em&gt;Piano DAC HiFi pcm512x-hifi-0&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;I2S DAC&lt;/strong&gt; : chọn &lt;strong&gt;ON&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;DAC Model&lt;/strong&gt; : chọn &lt;strong&gt;Allo Piano&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau đó chọn &lt;strong&gt;Save&lt;/strong&gt; và khởi động lại Volumio.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;2.) Cài đặt Piano DAC 1.1 trên RuneAudio&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau khi cài đặt RuneAudio trên thẻ nhớ.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn copy dòng cài đặt sau vào cuối file : &lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;/boot/config.txt&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;dtoverlay=allo-piano-dac-pcm512x-audio&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn khởi động RuneAudio .&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;652&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano DAC/Piano1.1_1.png&quot; width=&quot;1262&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Vào &lt;strong&gt;Menu&lt;/strong&gt; &amp;gt; Chọn &lt;strong&gt;MPD&lt;/strong&gt;&amp;nbsp; &amp;gt;&amp;nbsp; Tại &lt;strong&gt;Audio Output&lt;/strong&gt; các bạn chọn &lt;strong&gt;&lt;em&gt;ALLO Piano DAC (I2S)&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;gt; Chọn &lt;strong&gt;SAVE AND APPLY&lt;/strong&gt; . Khởi động lại RuneAudio và sử dụng.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px; text-align: center;&quot;&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;em&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;________ Mlab chúc các bạn nghe nhạc vui vẻ !__________&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+";s:16:"meta_description";s:26:"Cài đặt cho Piano DAC ";s:12:"meta_keyword";s:26:"Cài đặt cho Piano DAC ";s:8:"store_id";s:1:"0";s:8:"comments";N;}i:199;a:16:{s:7:"news_id";s:3:"199";s:5:"image";s:55:"data/Bai viet ky thuat/Setup Audio/Piano2.1/setup13.jpg";s:14:"date_available";s:10:"2017-08-15";s:8:"subtract";s:1:"1";s:10:"sort_order";s:1:"1";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2017-08-16 14:58:27";s:13:"date_modified";s:19:"0000-00-00 00:00:00";s:6:"viewed";s:2:"23";s:11:"language_id";s:1:"2";s:4:"name";s:29:"Cài đặt cho Piano 2.1 DAC";s:11:"description";s:7299:"&lt;p&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Hướng dẫn cài đặt cho Piano DAC 2.1 của Allo &lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;492&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano2.1/setup3.jpg&quot; width=&quot;831&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;span style=&quot;font-size:12px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;em&gt;Hình 1 : Ghép nối Raspberry Pi 3 + Kali + Piano 2.1&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;520&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano2.1/setup15.jpg&quot; width=&quot;836&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:12px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Hình 2 : Ghép nối Raspberry Pi 3 + Piano 2.1&lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;1.) Cài đặt Piano 2.1 trên Volumio &lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau khi đã cài đặt volumio vào thẻ nhớ.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Copy dòng cài đặt sau vào cuối file : &lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;/boot/config.txt&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;em&gt;&lt;span style=&quot;color:#008000;&quot;&gt;dtoverlay=allo-piano-dac-plus-pcm512x-audio&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn khởi động Volumio.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano2.1/Piano2.1_1.jpg&quot; style=&quot;width: 1000px; height: 516px;&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Chọn &lt;strong&gt;PLAYBACK OPTIONS&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;gt; Chọn &lt;strong&gt;Audio Output&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;Output Device&lt;/strong&gt; : Chọn &lt;strong&gt;&lt;em&gt;PianoDACPlus&amp;nbsp; multicodec-0&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;I2S DAC&lt;/strong&gt; : chọn &lt;strong&gt;ON&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại &lt;strong&gt;DAC Model&lt;/strong&gt; : chọn &lt;strong&gt;Allo Piano 2.1&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau đó chọn &lt;strong&gt;Save&lt;/strong&gt; và khởi động lại Volumio.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;strong&gt;2.) Cài đặt Piano 2.1 trên RuneAudio &lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau khi cài đặt RuneAudio trên thẻ nhớ.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn copy dòng cài đặt sau vào cuối file : &lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;/boot/config.txt&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;dtoverlay=allo-piano-dac-plus-pcm512x-audio&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn khởi động RuneAudio .&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/Bai viet ky thuat/Setup Audio/Piano2.1/Piano2.1_3.jpg&quot; style=&quot;width: 1000px; height: 516px;&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Vào &lt;strong&gt;Menu&lt;/strong&gt; &amp;gt; Chọn &lt;strong&gt;MPD&lt;/strong&gt;&amp;nbsp; &amp;gt;&amp;nbsp; Tại &lt;strong&gt;Audio Output&lt;/strong&gt; các bạn chọn &lt;strong&gt;&lt;em&gt;ALLO Piano DAC 2.1 (I2S)&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;gt; Chọn &lt;strong&gt;SAVE AND APPLY&lt;/strong&gt; . Khởi động lại RuneAudio và sử dụng.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;em&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;________ Mlab chúc các bạn nghe nhạc vui vẻ !__________&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+";s:16:"meta_description";s:29:"Cài đặt cho Piano 2.1 DAC";s:12:"meta_keyword";s:29:"Cài đặt cho Piano 2.1 DAC";s:8:"store_id";s:1:"0";s:8:"comments";N;}i:198;a:16:{s:7:"news_id";s:3:"198";s:5:"image";s:24:"data/spAllo/boss-dac.jpg";s:14:"date_available";s:10:"2017-08-14";s:8:"subtract";s:1:"1";s:10:"sort_order";s:1:"1";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2017-08-15 15:29:41";s:13:"date_modified";s:19:"2017-08-15 15:55:20";s:6:"viewed";s:3:"185";s:11:"language_id";s:1:"2";s:4:"name";s:25:"Cài đặt cho Boss DAC ";s:11:"description";s:6125:"&lt;p&gt;
+	&lt;em&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Hướng dẫn cài đặt cho Boss DAC của Allo &lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+	&lt;img alt=&quot;&quot; height=&quot;503&quot; src=&quot;http://mlab.vn/image/data/spAllo/boss-dac.jpg&quot; width=&quot;761&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;color:#0000cd;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;1.) Cài đặt Boss DAC trên Volumio&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau khi cài đặt &lt;a href=&quot;https://volumio.org/&quot;&gt;Volumio&lt;/a&gt; vào thẻ nhớ. Các bạn cắm thẻ nhớ vào máy tính, copy dòng cài đặt sau vào cuối file &lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;/boot/config.txt&lt;/em&gt;&lt;/span&gt; .&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;dtoverlay=allo-boss-dac-pcm512x-audio &lt;/span&gt;&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn khởi động volumio.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/spAllo/BossDAC_1.jpg&quot; style=&quot;width: 1000px; height: 525px;&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Chọn &lt;strong&gt;PLAYBACK OPTIONS&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;gt; Chọn &lt;strong&gt;Audio Output&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại Output Device : Chọn &lt;strong&gt;Boss DAC HiFi [Master] pcm512x-hifi&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại I2S DAC : chọn &lt;strong&gt;ON&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;+ Tại DAC Model : chọn &lt;strong&gt;Allo BOSS&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau đó chọn Save, khởi động lại Volumio và sử dụng.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;color:#0000cd;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;2.) Cài đặt Boss DAC trên RuneAudio&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Sau khi cài đặt &lt;a href=&quot;http://www.runeaudio.com/&quot;&gt;RuneAudio&lt;/a&gt; trên thẻ nhớ.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn copy dòng cài đặt sau vào cuối file : &lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;/boot/config.txt&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 80px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#008000;&quot;&gt;&lt;em&gt;dtoverlay=allo-boss-dac-pcm512x-audio&lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Các bạn khởi động RuneAudio .&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;img alt=&quot;&quot; src=&quot;http://mlab.vn/image/data/spAllo/BossDAC_2.jpg&quot; style=&quot;width: 1000px; height: 517px;&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;Vào &lt;strong&gt;Menu&lt;/strong&gt; &amp;gt; Chọn &lt;strong&gt;MPD&lt;/strong&gt;&amp;nbsp; &amp;gt;&amp;nbsp; Tại &lt;strong&gt;Audio Output&lt;/strong&gt; các bạn chọn &lt;strong&gt;ALLO Boss DAC (I2S)&lt;/strong&gt; &amp;nbsp;&amp;nbsp;&amp;gt; Chọn &lt;strong&gt;SAVE AND APPLY&lt;/strong&gt; . Khởi động lại RuneAudio và sử dụng. &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px; text-align: center;&quot;&gt;
+	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;em&gt;&lt;span style=&quot;font-family: arial,helvetica,sans-serif;&quot;&gt;________ Mlab chúc các bạn nghe nhạc vui vẻ !__________&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+";s:16:"meta_description";s:25:"Cài đặt cho Boss DAC ";s:12:"meta_keyword";s:25:"Cài đặt cho Boss DAC ";s:8:"store_id";s:1:"0";s:8:"comments";N;}}

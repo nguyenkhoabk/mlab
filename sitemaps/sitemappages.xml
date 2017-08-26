@@ -1,0 +1,21 @@
+<?xml-stylesheet type="text/xsl" href="gss.xsl"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+    <url>
+        <loc>http://mlab.vn/quyen-rieng-tu.html</loc>
+        <lastmod>2017-07-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://mlab.vn/dieu-khoan-va-dieu-kien.html</loc>
+        <lastmod>2017-07-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://mlab.vn/index.php?route=information/contact</loc>
+        <lastmod>2017-07-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>
